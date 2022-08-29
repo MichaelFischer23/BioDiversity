@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<style>
+  .jumbotron  {
+    background-image: url(../pictures/viruses-bacteria-fungi-s.jpg);
+    background-size: cover;
+    text-align: center;
+   }
+</style>
+</head>
+
+<body style="background-color:LightSteelBlue">
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron"> 
+        <h1 style="color:white">Belly Button Biodiversity Dashboard</h1>
+        <p style="color:white">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="paragraph">
+        <h1 style="font-size: 25px;"> This project was created using a mixture of html, javascript, and plotly. The data can be sorted through using the drop down menu to select which individual's data you want. 
+          The demographic info box displays the subjects ID, eithnicity, gender, age, location, belly button type (inner/outer) and the number of times they wash their belly button in a given week. The bar and bubble charts displays the most common bacteria found in each persons belly button. 
+          While the guage chart displys how often it is washed.</button></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary" >
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>            
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+          <h6 class="panel-text"></h6>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id='bar'></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+  <script src="charts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="plots.js"></script>
+  
+
+</body>
+
+</html>
